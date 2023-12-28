@@ -1,0 +1,10 @@
+version: '3'
+services:
+  raytracer:
+    build:
+      context: .
+      dockerfile: dockerfile
+    devices:
+      - /dev/dri
+      - /dev/kfd
+    command: [ "python3", "gpu_raytracer.py" ]
