@@ -104,17 +104,11 @@ class Sphere:
 
         return color
 
-class CheckeredSphere(Sphere):
-    def diffuse_color(self, intersection_point):
-        checker = ((intersection_point.x * 2).astype(int) % 2) == ((intersection_point.z * 2).astype(int) % 2)
-        return self.diffuse_color * checker
-
 # Scene setup
 scene_objects = [
     Sphere(Vector3D(.75, .1, 1.), .6, Color(0, 0, 1)),
     Sphere(Vector3D(-.75, .1, 2.25), .6, Color(.3, .123, .321)),
     Sphere(Vector3D(-2.75, .1, 3.5), .6, Color(1, .5, .25)),
-    CheckeredSphere(Vector3D(0, -99999.5, 0), 99999, Color(.75, .75, .75), 0.25),
 ]
 
 # Screen coordinates: x0, y0, x1, y1.
