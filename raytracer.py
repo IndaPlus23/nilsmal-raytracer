@@ -40,7 +40,7 @@ FAR_AWAY = 1.0e39  # vädligt stort avstånd
 
 def raytrace(ray_origin, ray_direction, scene, bounce=0):
     # ray_origin is the ray origin, ray_direction is the normalized ray direction
-    # scene is a list of Sphere objects (see below)
+    # scene is a list of Sphere objects
     # bounce is the number of the bounce, starting at zero for camera rays
 
     distances = [sphere.intersect(ray_origin, ray_direction) for sphere in scene]
